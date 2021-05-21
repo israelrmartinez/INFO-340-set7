@@ -33,5 +33,3 @@ export function searchTweets(search) {
     });
     return filter;
 }
-
-getRecentTweets();

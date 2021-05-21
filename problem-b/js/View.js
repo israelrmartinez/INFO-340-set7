@@ -1,20 +1,24 @@
 'use strict';
 
-import {tweets} from './Model.js';
+// import {tweets} from './Model.js';
 
 // console.log(tweets);
 
 export function printTweets(tweetArr) {
+    let str = '';
     if (tweetArr.length == 0) {
-        console.log('No tweets found');
+        str = 'No tweets found';
+        console.log(str);
     } else {
         tweetArr.forEach( (item) => {
             let d = new Date(item.timestamp);
             d = d.toLocaleString('en-US');
-            let str = '- "' + item.text + '" (' + d + ')';
-            console.log(str);
+            let post = '- "' + item.text + '" (' + d + ')';
+            console.log(post);
+            str = str + post + '\n';
         })
     }
+    return str;
 }
 
-printTweets(tweets);
+// console.log(printTweets(tweets));
